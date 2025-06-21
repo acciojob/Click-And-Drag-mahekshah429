@@ -1,5 +1,4 @@
 const slider = document.querySelector('.items');
-
 let isDown = false;
 let startX;
 let scrollLeft;
@@ -25,6 +24,6 @@ slider.addEventListener('mousemove', (e) => {
   if (!isDown) return;
   e.preventDefault();
   const x = e.pageX - slider.offsetLeft;
-  const walk = (x - startX) * 2; // scroll speed
+  const walk = (x - startX) * 2; // speed
   slider.scrollLeft = scrollLeft - walk;
 });
