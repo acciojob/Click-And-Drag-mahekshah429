@@ -1,28 +1,29 @@
-const container = document.getElementById('scrollContainer');
-
+const items = document.querySelector('.items');
 let isDown = false;
 let startX;
 let scrollLeft;
 
-container.addEventListener('mousedown', (e) => {
+items.addEventListener('mousedown', (e) => {
   isDown = true;
-  container.classList.add('active');
-  startX = e.pageX - container.offsetLeft;
-  scrollLeft = container.scrollLeft;
+  items.classList.add('active');
+  startX = e.pageX - items.offsetLeft;
+  scrollLeft = items.scrollLeft;
 });
 
-container.addEventListener('mouseleave', () => {
+items.addEventListener('mouseleave', () => {
   isDown = false;
+  items.classList.remove('active');
 });
 
-container.addEventListener('mouseup', () => {
+items.addEventListener('mouseup', () => {
   isDown = false;
+  items.classList.remove('active');
 });
 
-container.addEventListener('mousemove', (e) => {
+items.addEventListener('mousemove', (e) => {
   if (!isDown) return;
   e.preventDefault();
-  const x = e.pageX - container.offsetLeft;
-  const walk = (x - startX) * 2; // scroll speed
-  container.scrollLeft = scrollLeft - walk;
+  const x = e.pageX - items.offsetLeft;
+  const walk = (x - startX) * 2; // speed factor
+  items.scrollLeft = scrollLeft - walk;
 });

@@ -1,30 +1,32 @@
 body {
-  font-family: sans-serif;
+  font-family: Arial, sans-serif;
   padding: 20px;
+}
+
+.container {
+  width: 400px;
+  overflow: hidden;
+  border: 2px solid #333;
+  margin: auto;
 }
 
 .items {
   display: flex;
-  overflow-x: auto;
-  gap: 16px;
-  padding: 10px;
+  width: max-content;
+  overflow-x: scroll;
   cursor: grab;
-  border: 2px solid #ccc;
-  user-select: none;
   scroll-behavior: smooth;
-  width: 90%;
-  margin: auto;
-  height: 150px;
 }
 
-.card {
+.item {
   min-width: 200px;
   height: 100px;
-  background: lightblue;
+  margin-right: 10px;
+  background-color: #f0f0f0;
+  border: 2px solid #999;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  border-radius: 8px;
-  flex-shrink: 0;
+  font-size: 1.2rem;
 }
