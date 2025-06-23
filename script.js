@@ -5,25 +5,22 @@ let scrollLeft;
 
 items.addEventListener('mousedown', (e) => {
   isDown = true;
-  items.classList.add('active');
-  startX = e.pageX - items.offsetLeft;
+  startX = e.pageX;
   scrollLeft = items.scrollLeft;
-});
-
-items.addEventListener('mouseleave', () => {
-  isDown = false;
-  items.classList.remove('active');
 });
 
 items.addEventListener('mouseup', () => {
   isDown = false;
-  items.classList.remove('active');
+});
+
+items.addEventListener('mouseleave', () => {
+  isDown = false;
 });
 
 items.addEventListener('mousemove', (e) => {
   if (!isDown) return;
   e.preventDefault();
-  const x = e.pageX - items.offsetLeft;
-  const walk = (x - startX) * 2; // speed factor
+  const x = e.pageX;
+  const walk = (x - startX) * 1.5; // speed factor
   items.scrollLeft = scrollLeft - walk;
 });
