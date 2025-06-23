@@ -1,40 +1,30 @@
 body {
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #111;
   font-family: sans-serif;
+  padding: 20px;
 }
 
 .items {
-  width: 80vw;
-  height: 200px;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  white-space: nowrap;
-  border: 3px solid #fff;
-  background: #fff;
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+  padding: 10px;
   cursor: grab;
-  transition: 0.3s;
-}
-
-.items.active {
-  cursor: grabbing;
-}
-
-.item {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 200px;
-  height: 180px;
-  margin: 10px;
-  background-color: tomato;
-  color: white;
-  font-size: 2rem;
-  font-weight: bold;
+  border: 2px solid #ccc;
   user-select: none;
+  scroll-behavior: smooth;
+  width: 90%;
+  margin: auto;
+  height: 150px;
+}
+
+.card {
+  min-width: 200px;
+  height: 100px;
+  background: lightblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  border-radius: 8px;
+  flex-shrink: 0;
 }
